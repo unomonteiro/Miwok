@@ -42,7 +42,15 @@ public class CategoryFragmentPagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         // Generate title based on item position
-        return tabTitles[position];
+        if (position == 0) {
+            return mContext.getResources().getString(R.string.category_numbers);
+        } else if (position == 1) {
+            return mContext.getResources().getString(R.string.category_family);
+        } else if (position == 2) {
+            return mContext.getResources().getString(R.string.category_colors);
+        } else {
+            return mContext.getResources().getString(R.string.category_phrases);
+        }
     }
 
 }
